@@ -1,31 +1,162 @@
-import React from "react";
+import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import VanillaTilt from 'vanilla-tilt';
+import { Link } from 'react-scroll';
 
-function Classes() {
+const CourseCard = ({ card, index }) => {
+  const cardRef = useRef(null);
+  const blobRef = useRef(null);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      VanillaTilt.init(cardRef.current, {
+        max: 12,
+        speed: 400,
+        glare: true,
+        'max-glare': 0.25,
+        scale: 1.05,
+      });
+    }
+    return () => {
+      if (cardRef.current && cardRef.current.vanillaTilt) {
+        cardRef.current.vanillaTilt.destroy();
+      }
+    };
+  }, []);
+
+  const handleMouseMove = (e) => {
+    if (!blobRef.current) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    blobRef.current.style.left = `${x}px`;
+    blobRef.current.style.top = `${y}px`;
+  };
+
+  const handleMouseEnter = () => document.getElementById('custom-cursor')?.classList.add('hover');
+  const handleMouseLeave = () => document.getElementById('custom-cursor')?.classList.remove('hover');
+
   return (
-    <div className="section">
-      <h2>Classes Offered</h2>
-
-      <div className="card">
-        <h3>Child Art</h3>
-        <p>Nursery to 2nd Std (3–7 years)</p>
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true }}
+      style={{ display: 'flex' }}
+    >
+      <div 
+        ref={cardRef} 
+        className="course-card" 
+        style={{ background: card.bg, transformStyle: 'preserve-3d', flex: 1, display: 'flex', flexDirection: 'column' }}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter} 
+        onMouseLeave={handleMouseLeave}
+      >
+        <div ref={blobRef} className="card-cursor-blob" style={{ background: card.accent }} />
+        
+        <div className="card-bg-number" style={{ transform: 'translateZ(10px)' }}>{card.number}</div>
+        
+        <div style={{ transform: 'translateZ(40px)', display: 'flex', flexDirection: 'column', flex: 1 }}>
+          <div className="card-tag" style={{ color: card.tagColor, alignSelf: 'flex-start' }}>{card.tag}</div>
+          
+          <h3 className="card-name">{card.name}</h3>
+          <p className="card-tagline">{card.tagline}</p>
+          
+          <div className="card-divider" style={{ backgroundColor: card.accent }} />
+          
+          <div className="card-badges">
+            <span className="card-badge">{card.age}</span>
+            <span className="card-badge">{card.level}</span>
+          </div>
+          
+          <p className="card-desc" style={{ flex: 1 }}>{card.description}</p>
+          
+          <Link 
+            to="enroll" smooth={true} duration={800} offset={-80} 
+            className="card-enroll-btn" style={{ backgroundColor: card.accent, alignSelf: 'flex-start' }}
+          >
+            Enroll Now <span className="btn-arrow">→</span>
+          </Link>
+        </div>
       </div>
-
-      <div className="card">
-        <h3>Young Art</h3>
-        <p>3rd to 5th Std (8–10 years)</p>
-      </div>
-
-      <div className="card">
-        <h3>Art Grade</h3>
-        <p>6th Std to Elementary & Intermediate (11–14 years)</p>
-      </div>
-
-      <h3>Other Details</h3>
-      <p><strong>Duration:</strong> 2 hours (once a week)</p>
-      <p><strong>Mode:</strong> Offline & Online</p>
-      <p><strong>Sessions:</strong> 12 or 14 sessions</p>
-    </div>
+    </motion.div>
   );
-}
+};
 
+const Classes = () => {
+  const courses = [
+    {
+      id: '01',
+      name: 'Child Art',
+      tagline: 'First strokes of genius',
+      age: '3 – 7 yrs',
+      level: 'Nursery to 2nd Std',
+      description: 'Where imagination runs wild. Kids explore color, shape and joy through creative drawing.',
+      bg: 'linear-gradient(145deg, #e8f4fd 0%, #c8e6f8 40%, #ddd0f5 100%)',
+      accent: '#4a90d9',
+      number: '01',
+      tag: 'Beginner',
+      tagColor: '#4a90d9',
+    },
+    {
+      id: '02',
+      name: 'Young Art',
+      tagline: 'Where style is born',
+      age: '8 – 10 yrs',
+      level: '3rd to 5th Std',
+      description: 'Students develop personal style, learn shading, and begin to find their artistic voice.',
+      bg: 'linear-gradient(145deg, #fde8f3 0%, #f5c6e0 40%, #ffd4a8 100%)',
+      accent: '#e0407b',
+      number: '02',
+      tag: 'Intermediate',
+      tagColor: '#e0407b',
+    },
+    {
+      id: '03',
+      name: 'Art Grade',
+      tagline: 'Mastery in the making',
+      age: '11 – 14 yrs',
+      level: '6th Std to Elementary & Intermediate',
+      description: 'Advanced techniques and portfolio-ready artwork for serious young artists.',
+      bg: 'linear-gradient(145deg, #fff5e0 0%, #fde4b8 40%, #fcd5a0 100%)',
+      accent: '#e8621a',
+      number: '03',
+      tag: 'Advanced',
+      tagColor: '#e8621a',
+    },
+  ];
+
+  return (
+    <section id="classes" className="classes-section">
+      <div className="classes-blob-center"></div>
+
+      <div className="section-content">
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <span className="section-label">[ COURSES ]</span>
+          <h2 className="classes-title" style={{ color: '#1a1208' }}>
+            Choose Your <br/>
+            <em className="classes-title-accent">Art Journey</em>
+          </h2>
+          <p className="classes-subtitle">
+            Three carefully crafted levels — built for every young artist's age and imagination.
+          </p>
+        </div>
+
+        <div className="cards-grid">
+          {courses.map((card, idx) => (
+            <CourseCard key={card.id} card={card} index={idx} />
+          ))}
+        </div>
+
+        <div className="info-pills-row">
+          {['⏱️ 2 Hours · Once a Week', '🌐 Offline & Online Available', '📅 12 or 14 Sessions Per Batch'].map((pill, i) => (
+             <div key={i} className="info-pill">
+               {pill}
+             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 export default Classes;

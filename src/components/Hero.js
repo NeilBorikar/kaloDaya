@@ -48,7 +48,7 @@ const Hero = () => {
             Explore Classes →
           </Link>
           <Link 
-            to="enroll" smooth={true} duration={800} offset={-80} 
+            to="contact" smooth={true} duration={800} offset={-80} 
             onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
             style={{ display: 'inline-block', backgroundColor: 'transparent', color: 'var(--text-dark)', border: '1px solid var(--accent-gold)', padding: '16px 36px', borderRadius: '40px', fontSize: '1.1rem', cursor: 'none', transition: 'all 0.3s' }} 
             onMouseOver={e=>{e.currentTarget.style.backgroundColor='var(--accent-gold)'; e.currentTarget.style.color='white'}} 

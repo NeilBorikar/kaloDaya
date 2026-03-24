@@ -71,12 +71,7 @@ const CourseCard = ({ card, index }) => {
           
           <p className="card-desc" style={{ flex: 1 }}>{card.description}</p>
           
-          <Link 
-            to="enroll" smooth={true} duration={800} offset={-80} 
-            className="card-enroll-btn" style={{ backgroundColor: card.accent, alignSelf: 'flex-start' }}
-          >
-            Enroll Now <span className="btn-arrow">→</span>
-          </Link>
+
         </div>
       </div>
     </motion.div>

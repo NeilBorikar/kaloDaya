@@ -39,18 +39,7 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link 
-            to="enroll" smooth={true} duration={800} offset={-80} 
-            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} 
-            style={{ 
-              marginLeft: '32px', cursor: 'none', backgroundColor: 'var(--text-dark)', color: 'var(--text-light)', 
-              padding: '10px 24px', borderRadius: '30px', fontWeight: '500', display: 'inline-block', transition: 'all 0.3s' 
-            }}
-            onMouseOver={e=>e.currentTarget.style.backgroundColor='var(--accent-gold)'} 
-            onMouseOut={e=>e.currentTarget.style.backgroundColor='var(--text-dark)'}
-          >
-            Enroll Now
-          </Link>
+
         </nav>
 
         {/* Mobile Toggle */}
@@ -81,11 +70,7 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: links.length * 0.1 }}>
-                <Link to="enroll" smooth={true} duration={800} offset={-80} onClick={() => setMenuOpen(false)} style={{ display: 'inline-block', backgroundColor: 'var(--accent-gold)', color: 'var(--bg-dark)', padding: '12px 32px', borderRadius: '30px', fontSize: '1.2rem', marginTop: '20px', cursor: 'none' }}>
-                  Enroll Now
-                </Link>
-              </motion.div>
+
             </nav>
           </motion.div>
         )}

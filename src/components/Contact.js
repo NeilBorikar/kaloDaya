@@ -22,7 +22,7 @@ const Contact = () => {
 
           <motion.div initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} style={{ backgroundColor: 'var(--bg-dark)', color: 'var(--text-light)', padding: '50px 40px', borderRadius: '24px', position: 'relative', overflow: 'hidden', width: '100%', maxWidth: '500px' }}>
             <div className="paint-blob blob-screen" style={{ width: '250px', height: '250px', backgroundColor: 'var(--accent-yellow)', bottom: '-50px', right: '-50px', opacity: 0.2 }}></div>
-            
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: '35px', zIndex: 1, position: 'relative' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
                 <div style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><FiPhone size={26} color="var(--accent-blue)" /></div>

@@ -90,3 +90,9 @@ Thumbs.db
 *.swp
 *.bak
 *.tmp
+
+
+node_modules
+build
+.env
+.DS_Store

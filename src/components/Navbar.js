@@ -24,10 +24,10 @@ const Navbar = () => {
   const handleMouseLeave = () => document.getElementById('custom-cursor')?.classList.remove('hover');
 
   return (
-    <header className="fixed top-0 w-full z-50 transition-all duration-300" style={{ backdropFilter: scrolled ? 'blur(12px)' : 'none', background: '#2a2218', borderBottom: '2px solid #c9a84c' }}>
+    <header className="fixed top-0 w-full z-50 transition-all duration-300" style={{ backdropFilter: scrolled ? 'blur(12px)' : 'none', background: '#0a0a0a', borderBottom: '2px solid #c9a84c' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link to="hero" smooth={true} duration={800} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ cursor: 'none', zIndex: 50, position: 'relative', display: 'flex', alignItems: 'center', gap: '16px', marginLeft: '-24px' }}>
-          <img src={logo} alt="Logo" style={{ height: '120px', width: '120px', objectFit: 'cover', borderRadius: '50%', border: '3px solid #c9a84c', boxShadow: '0 0 15px rgba(201, 168, 76, 0.5)' }} />
+          <img src={logo} alt="Logo" style={{ height: '120px', width: 'auto', objectFit: 'contain', border: '3px solid #c9a84c', boxShadow: '0 0 15px rgba(201, 168, 76, 0.5)' }} />
           <h1 style={{ fontSize: '1.8rem', color: '#c9a84c' }}>
             ✦ Sawant Art Studio
             <div style={{ height: '2px', width: '100%', backgroundColor: '#c9a84c', marginTop: '4px' }} />

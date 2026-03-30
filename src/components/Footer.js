@@ -26,7 +26,7 @@ const Footer = () => {
 
         <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(255,255,255,0.1)', marginBottom: '40px' }}></div>
         
-        <p style={{ color: '#666', fontSize: '1rem' }}>© 2025 Sawant Art Studio · Made with <span role="img" aria-label="art">🎨</span></p>
+        <p style={{ color: '#666', fontSize: '1rem' }}>© 2026 Sawant Art Studio · Made with <span role="img" aria-label="art">🎨</span></p>
 
         <Link to="hero" smooth={true} duration={1000} style={{ marginTop: '30px' }}>
           <motion.div whileHover={{ scale: 1.1 }} style={{ width: '56px', height: '56px', border: '1px solid var(--accent-gold)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', cursor: 'none', zIndex: 100 }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

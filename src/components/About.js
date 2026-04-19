@@ -36,7 +36,7 @@ const About = () => {
             <div className="photo-placeholder" style={{ textAlign: 'center' }}>
               <span style={{ fontSize: '80px' }}>🎨</span>
               <p style={{ fontFamily: 'Caveat', fontSize: '24px', color: 'var(--text-dark)', marginTop: '8px' }}>
-                Mr. Sawant G.B.
+                Mr. Vividh K.
               </p>
             </div>
           </div>

@@ -7,7 +7,7 @@ function Home() {
       <p>Unleash creativity with professional art guidance</p>
 
       <div className="card">
-        <h3>Mr. Sawant G. B.</h3>
+        <h3>Mr. Vividh K.</h3>
         <p>18+ years experience</p>
         <p>📞 9819182593</p>
       </div>

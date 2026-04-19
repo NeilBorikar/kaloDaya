@@ -29,7 +29,7 @@ const Navbar = () => {
         <Link to="hero" smooth={true} duration={800} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ cursor: 'none', zIndex: 50, position: 'relative', display: 'flex', alignItems: 'center', gap: '16px', marginLeft: '-24px' }}>
           <img src={logo} alt="Logo" style={{ height: '120px', width: 'auto', objectFit: 'contain', border: '3px solid #c9a84c', boxShadow: '0 0 15px rgba(201, 168, 76, 0.5)' }} />
           <h1 style={{ fontSize: '1.8rem', color: '#c9a84c' }}>
-            ✦ Sawant Art Studio
+            ✦ Vividh Art Studio
             <div style={{ height: '2px', width: '100%', backgroundColor: '#c9a84c', marginTop: '4px' }} />
           </h1>
         </Link>

@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="paint-blob blob-screen" style={{ width: '250px', height: '250px', backgroundColor: 'var(--accent-pink)', bottom: '20%', right: '10%', opacity: 0.15 }}></div>
       
       <div className="section-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '3rem', color: 'var(--accent-gold)', marginBottom: '16px', fontFamily: '"Cormorant Garamond", serif' }}>✦ Sawant Art Studio</h2>
+        <h2 style={{ fontSize: '3rem', color: 'var(--accent-gold)', marginBottom: '16px', fontFamily: '"Cormorant Garamond", serif' }}>✦ Vividh Art Studio</h2>
         <p className="font-caveat" style={{ fontSize: '1.8rem', color: '#c0b8ad', marginBottom: '50px' }}>"Every child is an artist. Let's nurture that."</p>
         
         <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '60px' }}>
@@ -26,7 +26,7 @@ const Footer = () => {
 
         <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(255,255,255,0.1)', marginBottom: '40px' }}></div>
         
-        <p style={{ color: '#666', fontSize: '1rem' }}>© 2026 Sawant Art Studio · Made with <span role="img" aria-label="art">🎨</span></p>
+        <p style={{ color: '#666', fontSize: '1rem' }}>© 2026 Vividh Art Studio · Made with <span role="img" aria-label="art">🎨</span></p>
 
         <Link to="hero" smooth={true} duration={1000} style={{ marginTop: '30px' }}>
           <motion.div whileHover={{ scale: 1.1 }} style={{ width: '56px', height: '56px', border: '1px solid var(--accent-gold)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', cursor: 'none', zIndex: 100 }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

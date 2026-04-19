@@ -35,7 +35,7 @@ const Contact = () => {
                 <div style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><FiMail size={26} color="var(--accent-pink)" /></div>
                 <div>
                   <p style={{ fontSize: '0.9rem', color: '#aaa', marginBottom: '4px', letterSpacing: '1px', textTransform: 'uppercase' }}>Email</p>
-                  <a href="mailto:gangadharsawant1986@gmail.com" style={{ fontSize: '1.2rem', textDecoration: 'none', color: 'white' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>gangadharsawant1986@gmail.com</a>
+                  <a href="mailto:hello@vividh-art.com" style={{ fontSize: '1.2rem', textDecoration: 'none', color: 'white' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>hello@vividh-art.com</a>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
